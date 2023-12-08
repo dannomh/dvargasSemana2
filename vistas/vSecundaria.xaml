@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dvargasSemana2.vistas.vSecundaria"
+             Title="vSecundaria">
+    <VerticalStackLayout Spacing="5">
+        <Label 
+            Text="Notas del SIGE"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontSize="20"/>
+
+        <Frame BorderColor="black" CornerRadius="5">
+            <Picker x:Name="pkEstudiantes"
+                    Title="Estudiantes">
+                <Picker.Items>
+                    <x:String>Daniel</x:String>
+                    <x:String>Andres</x:String>
+                    <x:String>Olger</x:String>
+                    <x:String>Alejandro</x:String>
+                </Picker.Items>
+            </Picker>
+        </Frame>
+
+        <Frame BorderColor="Black" CornerRadius="5">
+            <Entry
+                x:Name="txtDato1" 
+                Placeholder="Ingrese nota seguimiento" 
+                PlaceholderColor="Black"
+                HeightRequest="40"
+                TextChanged="txtDato1_TextChanged"
+                MaxLength="3"/>
+        </Frame>
+        <Frame BorderColor="#2E86C1" CornerRadius="5">
+            <Entry
+                x:Name="txtNota2" 
+                Placeholder="Ingrese nota Examen: " 
+                PlaceholderColor="Black"
+                HeightRequest="40"
+                TextChanged="txtNota2_TextChanged"
+                MaxLength="3"/>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
