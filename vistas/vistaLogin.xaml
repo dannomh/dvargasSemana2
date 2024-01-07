@@ -4,16 +4,21 @@
              x:Class="dvargasSemana2.vistas.vistaLogin"
              Title="vistaLogin"
              BackgroundImageSource="gratispngfondoverde.png">
-    <VerticalStackLayout Spacing="20" >
-        <Label 
-            Text="Bienvenido xd "
-            HorizontalTextAlignment="Center"
-            FontSize="18"/>
+
+    <!-- Agrega esta línea para ocultar la barra de navegación -->
+    <NavigationPage.HasNavigationBar>
+        <OnPlatform x:TypeArguments="x:Boolean">
+            <On Platform="Android, iOS">false</On>
+        </OnPlatform>
+    </NavigationPage.HasNavigationBar>
+
+    <VerticalStackLayout Spacing="40"  Margin="0,100,0,0">
+
 
         <Image Source="https://revista.uisrael.edu.ec/images/uisrael.png"
                WidthRequest="300"/>
 
-        <Grid Padding="30">
+        <Grid Padding="40">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -24,9 +29,10 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label Text="USUARIO"
-           FontSize="18"
+           FontSize="20"
            Grid.Row="0"
-           Grid.Column="0"/>
+           Grid.Column="0"
+           TextColor="#0c3864"/>
 
             <Entry x:Name="txtUsuario"
                Placeholder="Ingrese el usuario"
@@ -34,16 +40,18 @@
                Grid.Column="1"/>
 
             <Label Text="CONTRASEÑA"
-            FontSize="18"
+            FontSize="20"
             Grid.Row="1"
-            Grid.Column="0"/>
+            Grid.Column="0"
+            TextColor="#0c3864"/>
+            
 
             <Entry x:Name="txtContraseña"
            Placeholder="Ingrese la contraseña"
            Grid.Row="1"
            Grid.Column="1"
-           IsPassword="True"/>
-
+           IsPassword="True"
+           />
         </Grid>
 
         <Button x:Name="btnIniciar"
@@ -51,6 +59,6 @@
                 Clicked="btnIniciar_Clicked"
                 Padding="10"
                 BackgroundColor="Azure"
-                TextColor="Black"/>
+                TextColor="#0c3864"/>
     </VerticalStackLayout>
 </ContentPage>

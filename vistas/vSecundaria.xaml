@@ -11,7 +11,7 @@
             TextColor="Black"
             FontSize="20"/>
 
-        <Frame BorderColor="black" CornerRadius="5">
+        <Frame BorderColor="black" CornerRadius="5" Margin="10">
             <Picker x:Name="pkEstudiantes"
                     Title="Estudiantes">
                 <Picker.Items>
@@ -23,23 +23,92 @@
             </Picker>
         </Frame>
 
-        <Frame BorderColor="Black" CornerRadius="5">
-            <Entry
-                x:Name="txtDato1" 
-                Placeholder="Ingrese nota seguimiento" 
-                PlaceholderColor="Black"
-                HeightRequest="40"
-                TextChanged="txtDato1_TextChanged"
-                MaxLength="3"/>
-        </Frame>
-        <Frame BorderColor="#2E86C1" CornerRadius="5">
-            <Entry
-                x:Name="txtNota2" 
-                Placeholder="Ingrese nota Examen: " 
-                PlaceholderColor="Black"
-                HeightRequest="40"
-                TextChanged="txtNota2_TextChanged"
-                MaxLength="3"/>
-        </Frame>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Label -->
+            <Label Grid.Column="0" Grid.Row="0" Text="Primer Momento"  Margin="20"/>
+            <Label Grid.Column="1" Grid.Row="0" Text="Segundo Momento"  Margin="20"/>
+            <!-- Entry 1 -->
+            <Frame Grid.Column="0" Grid.Row="1" BorderColor="Black" CornerRadius="5" Margin="10">
+                <Entry
+            x:Name="txtDato1" 
+            Placeholder="Nota 1" 
+            PlaceholderColor="Black"
+            HeightRequest="40"
+            TextChanged="txtDato1_TextChanged"
+            MaxLength="3"/>
+            </Frame>
+
+            <!-- Entry 2 -->
+            <Frame Grid.Column="1" Grid.Row="1" BorderColor="Black" CornerRadius="5" Margin="10">
+                <Entry
+            x:Name="txtDato2" 
+            Placeholder="Nota 1" 
+            PlaceholderColor="Black"
+            HeightRequest="40"
+            MaxLength="3"
+            TextChanged="txtDato2_TextChanged"/>
+            </Frame>
+
+            <!-- Entry 3 -->
+            <Frame Grid.Column="0" Grid.Row="2" BorderColor="Black" CornerRadius="5" Margin="10">
+                <Entry
+            x:Name="txtDato3" 
+            Placeholder="Nota 2" 
+            PlaceholderColor="Black"
+            HeightRequest="40"
+            MaxLength="3"
+            TextChanged="txtDato3_TextChanged"/>
+            </Frame>
+            
+            <Frame Grid.Column="1" Grid.Row="2" BorderColor="Black" CornerRadius="5" Margin="10">
+                <Entry
+            x:Name="txtDato4" 
+            Placeholder="Nota 2" 
+            PlaceholderColor="Black"
+            HeightRequest="40"
+            MaxLength="3"
+            TextChanged="txtDato4_TextChanged"/>
+            </Frame>
+
+                <Label Grid.Column="0" Grid.Row="3"
+            x:Name="lblCalifi1"
+            Text=""
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontSize="15"/>
+
+            <Label Grid.Column="1" Grid.Row="3"
+            x:Name="lblCalifi2"
+            Text=""
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontSize="15"/>
+
+        </Grid>
+        <Button x:Name="btnMostrar"
+                Text="NOTA FINAL"
+                Clicked="btnMostrar_Clicked"/>
+        <Label Text="nota"
+               x:Name="lblEstadoFinal"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               TextColor="Green"
+               FontSize="20"/>
+
+
     </VerticalStackLayout>
 </ContentPage>

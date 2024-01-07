@@ -9,15 +9,33 @@ public partial class vistaLogin : ContentPage
 
     private void btnIniciar_Clicked(object sender, EventArgs e)
     {
-		string usuario = "DANIEL";
-		string contrasenia = "S";
+        // Definir las listas de usuarios y contraseñas
+        List<string> usuarios = new List<string> { "daniel", "alejandro" };
+        List<string> contrasenias = new List<string> { "123", "321" };
 
-		if(txtUsuario.Text == usuario && txtContraseña.Text==contrasenia)
-		{
-			Navigation.PushAsync(new vPrincipal(usuario));
-		}else
-		{
-			DisplayAlert("Alerta", "Datos incorrectos", "Cancelar");
-		}
+        // Obtener los valores ingresados por el usuario
+        string usuarioIngresado = txtUsuario.Text.ToLower(); // Convertir a minúsculas para hacer la comparación sin importar mayúsculas/minúsculas
+        string contraseniaIngresada = txtContraseña.Text;
+
+        // Verificar si el usuario y la contraseña coinciden
+        bool credencialesValidas = false;
+
+        for (int i = 0; i < usuarios.Count; i++)
+        {
+            if (usuarioIngresado == usuarios[i] && contraseniaIngresada == contrasenias[i])
+            {
+                credencialesValidas = true;
+                break;
+            }
+        }
+
+        if (credencialesValidas)
+        {
+            Navigation.PushAsync(new vSecundaria());
+        }
+        else
+        {
+            DisplayAlert("Alerta", "Datos incorrectos", "Cancelar");
+        }
     }
 }

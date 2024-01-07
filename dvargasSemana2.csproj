@@ -53,6 +53,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="vistas\vCalificaciones.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="vistas\vistaLogin.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
